@@ -20,13 +20,6 @@ This project involves controlling an Arduino Nano ESP32 using joysticks and send
 - **Joystick reading**: Uses `joystick` objects assined to specific pins.
 - **ESP-NOW communcation**: Sends data to the car Adruino nano ESP32 using the ESP-NOW protocol.
 
-## Components
-- Arduino Nano ESP32
-- joystick x2
-- Arduino PSU
-- Breadboard
-- Cables
-
 ## Setup and Installation
 
 ### Hardware Requirements
