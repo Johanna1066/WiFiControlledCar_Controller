@@ -55,7 +55,7 @@ This file contains the main controller code for the Arduino Nano ESP32.
 
 1. **Clone the Repository:**
    ```sh
-   git clone https://github.com/Johanna1066/agileProjectTeamLkpg/
+   git clone https://github.com/Johanna1066/WiFiControlledCar_Controller
 2. **Open the Project in the Arduino IDE:**
 Open the .ino file from the cloned repository in the Arduino IDE.
 
