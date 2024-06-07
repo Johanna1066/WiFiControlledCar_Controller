@@ -1,7 +1,7 @@
 /*
  * @brief Controller Arduino code for an 'Arduino Nano ESP32'.
  * @details This code uses object-oriented programming to manage joystick input and sends data to another 'Arduino Nano ESP32' via WiFi using ESP-NOW.
- * @link https://github.com/Johanna1066/agileProjectTeamLkpg/
+ * @link https://github.com/Johanna1066/WiFiControlledCar_Controller
  * 
  * This implementation includes:
  * - Joystick objects assigned to pins for reading joystick directions.
