@@ -6,7 +6,7 @@
 This project involves controlling an Arduino Nano ESP32 using joysticks and sending their data via WiFi using the ESP-NOW protocol. The project is structured with object-oriented principles, leveraging namespaces, tasks, and semaphores for efficient handling and communication.
 
 ## Table of Contents
-- [File Overview](#file-overview)
+- [Features](#features)
 - [Setup and Installation](#setup-and-installation)
   - [Hardware Requirements](#hardware-requirements)
   - [Software Requirements](#software-requirements)
