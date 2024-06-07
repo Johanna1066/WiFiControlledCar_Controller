@@ -13,6 +13,7 @@
  * broadcastAddress: The MAC address of the receiver unit that this unit is trying to connect to (replace with your specific receiver's MAC address).
  */
 namespace globalVariables {
+
     int reading{};
 
     Joystick verticalJoystick(A2);
