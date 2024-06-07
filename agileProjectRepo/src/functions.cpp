@@ -15,14 +15,14 @@ void verticalReadSend(void *parameter)
 {
   for (;;)
   {
-    if (xSemaphoreTake(controllerNames::joystickHandle, portMAX_DELAY) == pdTRUE)
+    if (xSemaphoreTake(globalVariables::joystickHandle, portMAX_DELAY) == pdTRUE)
     {
-      controllerNames::verticalJoystick.doReading();
-      controllerNames::reading = controllerNames::verticalJoystick.getValue();
+      globalVariables::verticalJoystick.doReading();
+      globalVariables::reading = globalVariables::verticalJoystick.getValue();
 
-      esp_err_t result = esp_now_send(controllerNames::broadcastAddress, (uint8_t *)&controllerNames::reading, sizeof(controllerNames::reading));
+      esp_err_t result = esp_now_send(globalVariables::broadcastAddress, (uint8_t *)&globalVariables::reading, sizeof(globalVariables::reading));
 
-      xSemaphoreGive(controllerNames::joystickHandle);
+      xSemaphoreGive(globalVariables::joystickHandle);
     }
     vTaskDelay(5);
   }
@@ -37,17 +37,17 @@ void horizontalReadSend(void *parameter)
 {
   for (;;)
   {
-    if (xSemaphoreTake(controllerNames::joystickHandle, portMAX_DELAY) == pdTRUE)
+    if (xSemaphoreTake(globalVariables::joystickHandle, portMAX_DELAY) == pdTRUE)
     {
-      controllerNames::horizontalJoystick.doReading();
-      controllerNames::reading = controllerNames::horizontalJoystick.getValue();
+      globalVariables::horizontalJoystick.doReading();
+      globalVariables::reading = globalVariables::horizontalJoystick.getValue();
 
       // Increment value to distinguish between vertical and horizontal readings in the receiver code
-      controllerNames::reading += 10000;
+      globalVariables::reading += 10000;
 
-      esp_err_t result = esp_now_send(controllerNames::broadcastAddress, (uint8_t *)&controllerNames::reading, sizeof(controllerNames::reading));
+      esp_err_t result = esp_now_send(globalVariables::broadcastAddress, (uint8_t *)&globalVariables::reading, sizeof(globalVariables::reading));
 
-      xSemaphoreGive(controllerNames::joystickHandle);
+      xSemaphoreGive(globalVariables::joystickHandle);
     }
     vTaskDelay(5);
   }
@@ -71,11 +71,11 @@ void OnDataSent(const uint8_t *mac_addr, esp_now_send_status_t status)
 void initiate()
 {
   Serial.begin(9600);
-  controllerNames::verticalJoystick.initiateJoystick();
-  controllerNames::horizontalJoystick.initiateJoystick();
-  controllerNames::joystickHandle = xSemaphoreCreateMutex();
+  globalVariables::verticalJoystick.initiateJoystick();
+  globalVariables::horizontalJoystick.initiateJoystick();
+  globalVariables::joystickHandle = xSemaphoreCreateMutex();
 
-  if (controllerNames::joystickHandle == NULL)
+  if (globalVariables::joystickHandle == NULL)
   {
     Serial.println("Error creating semaphore");
     return;
@@ -91,11 +91,11 @@ void initiate()
 
   esp_now_register_send_cb(OnDataSent);
 
-  memcpy(controllerNames::peerInfo.peer_addr, controllerNames::broadcastAddress, 6);
-  controllerNames::peerInfo.channel = 0;
-  controllerNames::peerInfo.encrypt = false;
+  memcpy(globalVariables::peerInfo.peer_addr, globalVariables::broadcastAddress, 6);
+  globalVariables::peerInfo.channel = 0;
+  globalVariables::peerInfo.encrypt = false;
   
-  if (esp_now_add_peer(&controllerNames::peerInfo) != ESP_OK)
+  if (esp_now_add_peer(&globalVariables::peerInfo) != ESP_OK)
   {
     Serial.println("Failed to add peer");
     return;

@@ -12,7 +12,7 @@
  * peerInfo: A structure that holds information about the ESP-NOW peer, used for WiFi communication.
  * broadcastAddress: The MAC address of the receiver unit that this unit is trying to connect to (replace with your specific receiver's MAC address).
  */
-namespace controllerNames {
+namespace globalVariables {
     int reading{};
 
     Joystick verticalJoystick(A2);
