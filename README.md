@@ -28,7 +28,7 @@ This project involves controlling an Arduino Nano ESP32 using joysticks and send
 - WiFi network for ESP-NOW communication
 
 ### Software Requirements
-- Arduino IDE
+- VScode with platformIO or Arduino IDE
 - ESP32 board support installed in the Arduino IDE
 - Required libraries: `esp_now`, `WiFi`, `semphr`
 
@@ -49,19 +49,6 @@ Connect your Arduino Nano ESP32 to your computer and upload the code.
 5. **Download the Car Repository**
 Make sure to download the repository for the car as well.
 [ https://github.com/Johanna1066/WiFiControlledCar_Car/](https://github.com/Johanna1066/WiFiControlledCar_Car)
-
-
-### Hardware Requirements
-- Arduino Nano ESP32
-- SteeringServo
-- Engine
-- USsensor (Ultrasonic Sensor)
-
-  
-### Software Requirements
-- Arduino IDE
-- ESP32 board support installed in the Arduino IDE
-- Required libraries: esp_now.h, WiFi.h, ESP32Servo.h, and semphr
 
 
 ## Usage
