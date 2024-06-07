@@ -14,34 +14,18 @@ This project involves controlling an Arduino Nano ESP32 using joysticks and send
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [Acknowledgements](#acknowledgements)
-- [License](#license)
 
-## File Overview
+## Features
 
-### Joystick.cpp
-This file defines the implementation of the `Joystick` class, which handles joystick input operations.
-- **Constructor**: Initializes the joystick with the provided analog pin.
-- **Destructor**: Cleans up resources.
-- **initiateJoystick()**: Sets up the joystick pin and reads the initial center value.
-- **doReading()**: Reads and remaps the joystick value.
-- **getValue()**: Returns the current remapped joystick value.
+- **Joystick reading**: Uses `joystick` objects assined to specific pins.
+- **ESP-NOW communcation**: Sends data to the car Adruino nano ESP32 using the ESP-NOW protocol.
 
-### controllerNamespace.h
-This header file defines the `controllerNames` namespace, which encapsulates variables and objects related to the hand-controller functionality.
-- `reading`: Stores joystick data for transmission.
-- `verticalJoystick`: Instance of `Joystick` for vertical readings, connected to pin A2.
-- `horizontalJoystick`: Instance of `Joystick` for horizontal readings, connected to pin A4.
-- `myHandle`: Semaphore handle for task synchronization.
-- `peerInfo`: Structure for ESP-NOW peer information.
-- `broadcastAddress`: MAC address of the receiver unit.
-
-### main.cpp
-This file contains the main controller code for the Arduino Nano ESP32.
-- **setup()**: Initializes serial communication, joysticks, semaphore, WiFi, and ESP-NOW.
-- **loop()**: Empty, as tasks are managed independently.
-- **OnDataSent()**: Callback for ESP-NOW data sent event.
-- **verticalReadSend()**: Task for reading and sending vertical joystick data.
-- **horizontalReadSend()**: Task for reading and sending horizontal joystick data.
+## Components
+- Arduino Nano ESP32
+- joystick x2
+- Arduino PSU
+- Breadboard
+- Cables
 
 ## Setup and Installation
 
