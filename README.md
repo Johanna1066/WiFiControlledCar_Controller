@@ -37,7 +37,7 @@ This project involves controlling an Arduino Nano ESP32 using joysticks and send
 
 git clone [ https://github.com/Johanna1066/WiFiControlledCar_Controller/](https://github.com/Johanna1066/WiFiControlledCar_Controller)
 
-2. 2. **Open the Project in Arduino IDE**
+2. **Open the Project in Arduino IDE**
 Open the .ino file from the cloned repository in the Arduino IDE.
 
 3. **Install Required Libraries**
