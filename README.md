@@ -64,7 +64,7 @@ Required libraries: esp_now.h, WiFi.h, ESP32Servo.h, and semphr.
       }
       ```
         
-   2. Change the variable broadcastAddress in controllerNamespace to the 
+   2. Change the variable broadcastAddress in controllerNamespace.h to the 
       MAC adress of the **Car Arduino Nano ESP32**
       
 5. **Upload the Code**
