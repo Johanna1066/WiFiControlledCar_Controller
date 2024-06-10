@@ -43,10 +43,34 @@ Open the .ino file from the cloned repository in the Arduino IDE.
 3. **Install Required Libraries**
 Required libraries: esp_now.h, WiFi.h, ESP32Servo.h, and semphr.
 
-4. **Upload the Code**
+4. **Change the MAC adress**
+   1. Run this code on the Arduino Nano ESP32 connected to your **Car**
+      to get it's MAC adress:
+      ```
+      #include <Arduino.h>
+      #include "WiFi.h"
+
+      void setup()
+      {
+        Serial.begin(115200);
+        Serial.println();
+        Serial.print("ESP Board MAC Address:  ");
+        Serial.println(WiFi.macAddress());
+      }
+ 
+      void loop()
+      {
+        Serial.println(WiFi.macAddress());
+      }
+      ```
+        
+   2. Change the variable broadcastAddress in controllerNamespace to the 
+      MAC adress of the **Car Arduino Nano ESP32**
+      
+5. **Upload the Code**
 Connect your Arduino Nano ESP32 to your computer and upload the code.
 
-5. **Download the Car Repository**
+6. **Download the Car Repository**
 Make sure to download the repository for the car as well.
 [ https://github.com/Johanna1066/WiFiControlledCar_Car/](https://github.com/Johanna1066/WiFiControlledCar_Car)
 
