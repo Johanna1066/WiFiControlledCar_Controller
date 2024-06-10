@@ -43,7 +43,7 @@ Open the .ino file from the cloned repository in the Arduino IDE.
 3. **Install Required Libraries**
 Required libraries: esp_now.h, WiFi.h, ESP32Servo.h, and semphr.
 
-4. **Change the MAC adress**
+4. **Change the reciever MAC adress**
    1. Run this code on the Arduino Nano ESP32 connected to your **Car**
       to get it's MAC adress:
       ```
