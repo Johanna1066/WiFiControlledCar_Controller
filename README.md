@@ -1,5 +1,5 @@
 
-# WiFi controlled car - controller project README
+# WiFi controlled car - **controller** project README
 
 This project involves controlling an Arduino Nano ESP32 using joysticks and sending their data to the car Arduino Nano ESP32 via WiFi using the ESP-NOW protocol. 
 
