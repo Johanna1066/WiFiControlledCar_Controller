@@ -1,16 +1,14 @@
 
-### Arduino Joystick Controller Project README
+### WiFi controlled car - controller project README
 
-# Arduino Joystick Controller Project
-
-This project involves controlling an Arduino Nano ESP32 using joysticks and sending their data via WiFi using the ESP-NOW protocol. The project is structured with object-oriented principles, leveraging namespaces, tasks, and semaphores for efficient handling and communication.
+This project involves controlling an Arduino Nano ESP32 using joysticks and sending their data to the car Arduino Nano ESP32 via WiFi using the ESP-NOW protocol. 
 
 ## Table of Contents
 - [Features](#features)
 - [Setup and Installation](#setup-and-installation)
   - [Hardware Requirements](#hardware-requirements)
   - [Software Requirements](#software-requirements)
-  - [Installation Steps](#installation-steps)
+  - [Steps](#steps)
 - [Usage](#usage)
 - [Contributing](#contributing)
 - [Acknowledgements](#acknowledgements)
@@ -24,21 +22,24 @@ This project involves controlling an Arduino Nano ESP32 using joysticks and send
 
 ### Hardware Requirements
 - Arduino Nano ESP32
-- Two joysticks connected to analog pins A2 and A4
-- WiFi network for ESP-NOW communication
+- Joysticks x2
+- Arduino PSU
+- Breadboard
+- Cables
 
 ### Software Requirements
-- VScode with platformIO or Arduino IDE
+- VScode with platformIO
+- Arduino IDE
 - ESP32 board support installed in the Arduino IDE
-- Required libraries: `esp_now`, `WiFi`, `semphr`
+- Required libraries: `esp_now`, `WiFi` and `semphr`
 
-### Installation Steps
+### Steps
 1. **Clone the Repository**
 
 git clone [ https://github.com/Johanna1066/WiFiControlledCar_Controller/](https://github.com/Johanna1066/WiFiControlledCar_Controller)
 
-2. **Open the Project in Arduino IDE**
-Open the .ino file from the cloned repository in the Arduino IDE.
+2. **Open the Project in VScode with platformIO**
+Open the files from the cloned repository in VScode with platformIO.
 
 3. **Install Required Libraries**
 Required libraries: esp_now.h, WiFi.h, ESP32Servo.h, and semphr.
@@ -79,8 +80,11 @@ Make sure to download the repository for the car as well.
 Once the setup is complete and the code is uploaded:
 
 1. Power on your Arduino Nano ESP32.
-2. The system will initialize the components and start the task for sensor checking.
+2. The system will initialize the components and start the task for joystick checking and
+send data to the car ESP32.
 3. The car's steering and engine will be controlled based on the sensor data and commands received via ESP-NOW from the controller.
+
+
 ## Contributing
 Contributions are welcome! Please follow these steps to contribute:
 
@@ -89,6 +93,8 @@ Contributions are welcome! Please follow these steps to contribute:
 3. Commit your changes (git commit -m 'Add some AmazingFeature').
 4. Push to the branch (git push origin feature/AmazingFeature).
 5. Open a pull request.
+
+
 ## Acknowledgements
 Special thanks to John.
 
